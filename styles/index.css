@@ -1,33 +1,24 @@
 * {
-    color: rgb(204, 216, 255);
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html {
-    background-color: rgb(3, 20, 38);
+    background-color: rgb(239, 239, 239);
 }
 
 body {
     display: flex;
-    /* justify-content: space-between; */
+    flex-direction: column;
 }
 
 header {
-    background-color: rgb(8, 45, 84);
-    border-radius: 25px;
-    padding: 25px;
+    color: rgb(204, 216, 255);
+    background-color: rgb(3, 20, 38);
+    padding: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    justify-content: center;
-    font-size: 18px;
+    gap: 150px;
 }
 
 a {
@@ -36,15 +27,20 @@ a {
     color: rgb(204, 216, 255);
 }
 
-.header_upper_part {
+.social_links {
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 50px;
+    gap: 20px;
 }
 
 .social_links li a {
     display: flex;
+    align-items: center;
     gap: 5px;
+}
+
+.social_links li a:hover {
+    text-decoration: underline;
 }
 
 .page_title {
@@ -54,28 +50,41 @@ a {
 }
 
 main {
-    border-radius: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-    min-height: calc(120vh);
-    min-width: calc(140vh);
+    min-height: calc(100vh - 50px);
+    color: rgb(8, 45, 84);
+    display: flex;
 }
 
-.main_title {
-    height: 15%;
-    border-radius: 25px;
-    background-color: rgba(8, 45, 84, 0.2);
+.sidebar {
+    width: 15%;
+    background-color: rgb(8, 45, 84);
+    min-width: 150px;
+    padding: 48px;
+}
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
 }
 
 .main_body {
-    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 footer {
-    padding: 0px;
+    padding: 25pt;
+    background-color: rgb(10, 58, 110);
+    color: rgb(220, 220, 220);
     display: flex;
-    flex-direction: column;
-    justify-content: end;
-    bottom: 0px;
+    justify-content: space-between;
+    align-items: center;
 }

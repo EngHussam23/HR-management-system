@@ -94,31 +94,31 @@ function calculateEmployeeSalary(employeeLevel) {
 function renderEmployeeInfo() {
     let employeeInfo = document.getElementById("employee-info");
     employeeInfo.innerHTML = `
-    <h2>Employees Info</h2>
+    <h2>Employees Info:</h2><br>
     <p>
         Employee Name: ${emp1.name}<br>
         Employee Salary: ${emp1.salary}
-    </p>
+    </p><br>
     <p>
         Employee Name: ${emp2.name}<br>
         Employee Salary: ${emp2.salary}
-    </p>
+    </p><br>
     <p>
         Employee Name: ${emp3.name}<br>
         Employee Salary: ${emp3.salary}
-    </p>
+    </p><br>
     <p>
         Employee Name: ${emp4.name}<br>
         Employee Salary: ${emp4.salary}
-    </p>
+    </p><br>
     <p>
         Employee Name: ${emp5.name}<br>
         Employee Salary: ${emp5.salary}
-    </p>
+    </p><br>
     <p>
         Employee Name: ${emp6.name}<br>
         Employee Salary: ${emp6.salary}
-    </p>
+    </p><br>
     <p>
         Employee Name: ${emp7.name}<br>
         Employee Salary: ${emp7.salary}
