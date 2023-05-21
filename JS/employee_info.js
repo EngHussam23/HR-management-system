@@ -29,7 +29,6 @@ let emp3 = {
     department: "Marketing",
     level: "Senior",
     image: "",
-    salary: calculateEmployeeSalary(this.level),
 }
 emp3.salary = calculateEmployeeSalary(emp3.level);
 let emp4 = {
@@ -38,7 +37,6 @@ let emp4 = {
     department: "Administration",
     level: "Mid-Senior",
     image: "",
-    salary: calculateEmployeeSalary(this.level),
 }
 emp4.salary = calculateEmployeeSalary(emp4.level);
 let emp5 = {
@@ -47,7 +45,6 @@ let emp5 = {
     department: "Development",
     level: "Senior",
     image: "",
-    salary: calculateEmployeeSalary(this.level),
 }
 emp5.salary = calculateEmployeeSalary(emp5.level);
 let emp6 = {
@@ -56,7 +53,6 @@ let emp6 = {
     department: "Development",
     level: "Junior",
     image: "",
-    salary: calculateEmployeeSalary(this.level),
 }
 emp6.salary = calculateEmployeeSalary(emp6.level);
 let emp7 = {
@@ -65,12 +61,14 @@ let emp7 = {
     department: "Finance",
     level: "Mid-Senior",
     image: "",
-    salary: calculateEmployeeSalary(this.level),
 }
 emp7.salary = calculateEmployeeSalary(emp7.level);
 
 function getEmployeeID() {
-    return Math.ceil(Math.random * 9999);
+    // for testing
+    let x = Math.ceil(Math.random() * (9999 - 1000)) + 1000;
+    console.log(`id = ${x}`);
+    return Math.ceil(Math.random() * (9999 - 1000)) + 1000;
 }
 
 function calculateEmployeeSalary(employeeLevel) {
@@ -78,14 +76,22 @@ function calculateEmployeeSalary(employeeLevel) {
     let netSalary = 0;
     switch (employeeLevel) {
         case "Senior":
-            salary = Math.ceil(Math.random() * (2000 - 1500) + 1500);
+            salary = Math.ceil(Math.random() * (2000 - 1500)) + 1500;
+            // for testing
+            console.log(salary);
             break;
         case "Mid-Senior":
-            salary = Math.ceil(Math.random() * (2000 - 1500) + 1500);
+            salary = Math.ceil(Math.random() * (1500 - 1000)) + 1000;
+            // for testing
+            console.log(salary);
             break;
         case "Junior":
-            salary = Math.ceil(Math.random() * (2000 - 1500) + 1500);
+            salary = Math.ceil(Math.random() * (1000 - 500)) + 500;
+            // for testing
+            console.log(salary);
             break;
+        default:
+            console.log("Invalid level");
     }
     netSalary = salary - (salary * 7.5 / 100);
     return netSalary;
