@@ -1,12 +1,3 @@
-// for printing the element in from the js file on the html doc:
-// var element = document.getElementById("myElement");
-// element.innerHTML = "<h1>Welcome</h1><p>This is a paragraph.</p>";
-// You will create a render method to render each employee's name with their salary on the home page using document. write() or you can use innerHTML to display them. The output of the render function in the browser should look like this for example:
-// Employee name: Ghazi Samer
-// Employee salary: 1728
-
-
-
 let emp1 = {
     ID: getEmployeeID(),
     name: "Ghazi Samer",
@@ -68,6 +59,7 @@ function getEmployeeID() {
     // for testing
     let x = Math.ceil(Math.random() * (9999 - 1000)) + 1000;
     console.log(`id = ${x}`);
+
     return Math.ceil(Math.random() * (9999 - 1000)) + 1000;
 }
 
@@ -77,16 +69,19 @@ function calculateEmployeeSalary(employeeLevel) {
     switch (employeeLevel) {
         case "Senior":
             salary = Math.ceil(Math.random() * (2000 - 1500)) + 1500;
+
             // for testing
             console.log(salary);
             break;
         case "Mid-Senior":
             salary = Math.ceil(Math.random() * (1500 - 1000)) + 1000;
+
             // for testing
             console.log(salary);
             break;
         case "Junior":
             salary = Math.ceil(Math.random() * (1000 - 500)) + 500;
+
             // for testing
             console.log(salary);
             break;
