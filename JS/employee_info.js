@@ -13,6 +13,7 @@ function Employee(id, name, department, level, image, salary) {
 
 Employee.prototype.renderEmployeesInformation = function () {
     //This method does not work with my design
+    //it displays the content at the bottom of the html document, below the footer
     // document.write(`<p>
     //         Employee Name: ${this.name}<br>
     //         Department: ${this.department}<br>
