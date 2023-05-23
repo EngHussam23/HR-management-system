@@ -100,4 +100,17 @@ function calculateEmployeeSalary(employeeLevel) {
 // }
 //EmployeeInfo();
 
+
+Employee.prototype.renderEmployeesInformation = function () {
+    document.getElementById('info').innerHTML = `
+        <p>
+            Employee Name: ${this.name}<br>
+            Department: ${this.department}<br>
+            Employee Salary: ${this.salary}<br>
+        </p.`;
+}
+
+for (let i = 0; i < allEmployees.length; i++) {
+    allEmployees[i].renderEmployeesInformation();
+}
 console.log(allEmployees);
