@@ -1,5 +1,6 @@
 'use strict';
 
+let allEmployees = [];
 function Employee(id, name, department, level, image, salary) {
     this.ID = id;
     this.name = name;
@@ -7,6 +8,7 @@ function Employee(id, name, department, level, image, salary) {
     this.level = level;
     this.image = image;
     this.salary = salary;
+    allEmployees.push(this);
 }
 
 let emp1 = new Employee(getEmployeeID(), 'Ghazi Samer', 'Administration', 'Senior', 'NA',);
@@ -61,40 +63,41 @@ function calculateEmployeeSalary(employeeLevel) {
     return netSalary;
 }
 
-function EmployeeInfo() {
-    let employeeInfo = document.getElementById("employee-info");
-    employeeInfo.innerHTML = `
-    <h2>Employees Info:</h2><br>
-    <p>
-        Employee Name: ${emp1.name}<br>
-        Department: ${emp1.department}<br>
-        Employee Salary: ${emp1.salary}
-    </p><br>
-    <p>
-        Employee Name: ${emp2.name}<br>
-        Employee Salary: ${emp2.salary}
-    </p><br>
-    <p>
-        Employee Name: ${emp3.name}<br>
-        Employee Salary: ${emp3.salary}
-    </p><br>
-    <p>
-        Employee Name: ${emp4.name}<br>
-        Employee Salary: ${emp4.salary}
-    </p><br>
-    <p>
-        Employee Name: ${emp5.name}<br>
-        Employee Salary: ${emp5.salary}
-    </p><br>
-    <p>
-        Employee Name: ${emp6.name}<br>
-        Employee Salary: ${emp6.salary}
-    </p><br>
-    <p>
-        Employee Name: ${emp7.name}<br>
-        Employee Salary: ${emp7.salary}
-    </p>
-`
-}
+// function EmployeeInfo() {
+//     let employeeInfo = document.getElementById("employee-info");
+//     employeeInfo.innerHTML = `
+//     <h2>Employees Info:</h2><br>
+//     <p>
+//         Employee Name: ${emp1.name}<br>
+//         Department: ${emp1.department}<br>
+//         Employee Salary: ${emp1.salary}
+//     </p><br>
+//     <p>
+//         Employee Name: ${emp2.name}<br>
+//         Employee Salary: ${emp2.salary}
+//     </p><br>
+//     <p>
+//         Employee Name: ${emp3.name}<br>
+//         Employee Salary: ${emp3.salary}
+//     </p><br>
+//     <p>
+//         Employee Name: ${emp4.name}<br>
+//         Employee Salary: ${emp4.salary}
+//     </p><br>
+//     <p>
+//         Employee Name: ${emp5.name}<br>
+//         Employee Salary: ${emp5.salary}
+//     </p><br>
+//     <p>
+//         Employee Name: ${emp6.name}<br>
+//         Employee Salary: ${emp6.salary}
+//     </p><br>
+//     <p>
+//         Employee Name: ${emp7.name}<br>
+//         Employee Salary: ${emp7.salary}
+//     </p>
+// `
+// }
+//EmployeeInfo();
 
-EmployeeInfo();
+console.log(allEmployees);
