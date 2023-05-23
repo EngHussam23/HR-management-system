@@ -1,6 +1,6 @@
 'use strict';
 
-let allEmployees = [];
+const allEmployees = [];
 function Employee(id, name, department, level, image, salary) {
     this.ID = id;
     this.name = name;
@@ -11,19 +11,36 @@ function Employee(id, name, department, level, image, salary) {
     allEmployees.push(this);
 }
 
-let emp1 = new Employee(getEmployeeID(), 'Ghazi Samer', 'Administration', 'Senior', 'NA',);
+Employee.prototype.renderEmployeesInformation = function () {
+    //This method does not work with my design
+    // document.write(`<p>
+    //         Employee Name: ${this.name}<br>
+    //         Department: ${this.department}<br>
+    //         Employee Salary: ${this.salary}<br>
+    //     </p>`);
+
+    //but this one works only with a single object
+    document.getElementById('info').innerHTML = `
+    <p>
+         Employee Name: ${this.name}<br>
+         Department: ${this.department}<br>
+         Employee Salary: ${this.salary}<br>
+     </p>`;
+}
+
+let emp1 = new Employee(getEmployeeID(), 'Ghazi Samer', 'Administration', 'Senior', 'NA');
 emp1.salary = calculateEmployeeSalary(emp1.level);
-let emp2 = new Employee(getEmployeeID(), 'Lana Ali', 'Finance', 'Senior', 'NA',);
+let emp2 = new Employee(getEmployeeID(), 'Lana Ali', 'Finance', 'Senior', 'NA');
 emp2.salary = calculateEmployeeSalary(emp2.level);
-let emp3 = new Employee(getEmployeeID(), 'Tamara Ayoub', 'Marketing', 'Senior', 'NA',);
+let emp3 = new Employee(getEmployeeID(), 'Tamara Ayoub', 'Marketing', 'Senior', 'NA');
 emp3.salary = calculateEmployeeSalary(emp3.level);
-let emp4 = new Employee(getEmployeeID(), 'Safi Walid', 'Administration', 'Mid-Senior', 'NA',);
+let emp4 = new Employee(getEmployeeID(), 'Safi Walid', 'Administration', 'Mid-Senior', 'NA');
 emp4.salary = calculateEmployeeSalary(emp4.level);
-let emp5 = new Employee(getEmployeeID(), 'Omar Zaid', 'Development', 'Senior', 'NA',);
+let emp5 = new Employee(getEmployeeID(), 'Omar Zaid', 'Development', 'Senior', 'NA');
 emp5.salary = calculateEmployeeSalary(emp5.level);
 let emp6 = new Employee(getEmployeeID(), 'Rana Saleh', 'Development', 'Junior', 'NA');
 emp6.salary = calculateEmployeeSalary(emp6.level);
-let emp7 = new Employee(getEmployeeID(), 'Hadi Ahmad', 'Finance', 'Mid-Senior', 'NA',);
+let emp7 = new Employee(getEmployeeID(), 'Hadi Ahmad', 'Finance', 'Mid-Senior', 'NA');
 emp7.salary = calculateEmployeeSalary(emp7.level);
 
 function getEmployeeID() {
@@ -63,54 +80,8 @@ function calculateEmployeeSalary(employeeLevel) {
     return netSalary;
 }
 
-// function EmployeeInfo() {
-//     let employeeInfo = document.getElementById("employee-info");
-//     employeeInfo.innerHTML = `
-//     <h2>Employees Info:</h2><br>
-//     <p>
-//         Employee Name: ${emp1.name}<br>
-//         Department: ${emp1.department}<br>
-//         Employee Salary: ${emp1.salary}
-//     </p><br>
-//     <p>
-//         Employee Name: ${emp2.name}<br>
-//         Employee Salary: ${emp2.salary}
-//     </p><br>
-//     <p>
-//         Employee Name: ${emp3.name}<br>
-//         Employee Salary: ${emp3.salary}
-//     </p><br>
-//     <p>
-//         Employee Name: ${emp4.name}<br>
-//         Employee Salary: ${emp4.salary}
-//     </p><br>
-//     <p>
-//         Employee Name: ${emp5.name}<br>
-//         Employee Salary: ${emp5.salary}
-//     </p><br>
-//     <p>
-//         Employee Name: ${emp6.name}<br>
-//         Employee Salary: ${emp6.salary}
-//     </p><br>
-//     <p>
-//         Employee Name: ${emp7.name}<br>
-//         Employee Salary: ${emp7.salary}
-//     </p>
-// `
-// }
-//EmployeeInfo();
-
-
-Employee.prototype.renderEmployeesInformation = function () {
-    document.getElementById('info').innerHTML = `
-        <p>
-            Employee Name: ${this.name}<br>
-            Department: ${this.department}<br>
-            Employee Salary: ${this.salary}<br>
-        </p.`;
-}
+console.log(allEmployees);
 
 for (let i = 0; i < allEmployees.length; i++) {
     allEmployees[i].renderEmployeesInformation();
 }
-console.log(allEmployees);
