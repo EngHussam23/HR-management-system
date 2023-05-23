@@ -1,58 +1,27 @@
-let emp1 = {
-    ID: getEmployeeID(),
-    name: "Ghazi Samer",
-    department: "Administration",
-    level: "Senior",
-    image: "",
+'use strict';
+
+function Employee(id, name, department, level, image, salary) {
+    this.ID = id;
+    this.name = name;
+    this.department = department;
+    this.level = level;
+    this.image = image;
+    this.salary = salary;
 }
+
+let emp1 = new Employee(getEmployeeID(), 'Ghazi Samer', 'Administration', 'Senior', 'NA',);
 emp1.salary = calculateEmployeeSalary(emp1.level);
-let emp2 = {
-    ID: getEmployeeID(),
-    name: "Lana Ali",
-    department: "Finance",
-    level: "Senior",
-    image: "",
-}
+let emp2 = new Employee(getEmployeeID(), 'Lana Ali', 'Finance', 'Senior', 'NA',);
 emp2.salary = calculateEmployeeSalary(emp2.level);
-let emp3 = {
-    ID: getEmployeeID(),
-    name: "Tamara Ayoub",
-    department: "Marketing",
-    level: "Senior",
-    image: "",
-}
+let emp3 = new Employee(getEmployeeID(), 'Tamara Ayoub', 'Marketing', 'Senior', 'NA',);
 emp3.salary = calculateEmployeeSalary(emp3.level);
-let emp4 = {
-    ID: getEmployeeID(),
-    name: "Safi Walid",
-    department: "Administration",
-    level: "Mid-Senior",
-    image: "",
-}
+let emp4 = new Employee(getEmployeeID(), 'Safi Walid', 'Administration', 'Mid-Senior', 'NA',);
 emp4.salary = calculateEmployeeSalary(emp4.level);
-let emp5 = {
-    ID: getEmployeeID(),
-    name: "Omar Zaid",
-    department: "Development",
-    level: "Senior",
-    image: "",
-}
+let emp5 = new Employee(getEmployeeID(), 'Omar Zaid', 'Development', 'Senior', 'NA',);
 emp5.salary = calculateEmployeeSalary(emp5.level);
-let emp6 = {
-    ID: getEmployeeID(),
-    name: "Rana Saleh",
-    department: "Development",
-    level: "Junior",
-    image: "",
-}
+let emp6 = new Employee(getEmployeeID(), 'Rana Saleh', 'Development', 'Junior', 'NA');
 emp6.salary = calculateEmployeeSalary(emp6.level);
-let emp7 = {
-    ID: getEmployeeID(),
-    name: "Hadi Ahmed",
-    department: "Finance",
-    level: "Mid-Senior",
-    image: "",
-}
+let emp7 = new Employee(getEmployeeID(), 'Hadi Ahmad', 'Finance', 'Mid-Senior', 'NA',);
 emp7.salary = calculateEmployeeSalary(emp7.level);
 
 function getEmployeeID() {
@@ -92,12 +61,13 @@ function calculateEmployeeSalary(employeeLevel) {
     return netSalary;
 }
 
-function renderEmployeeInfo() {
+function EmployeeInfo() {
     let employeeInfo = document.getElementById("employee-info");
     employeeInfo.innerHTML = `
     <h2>Employees Info:</h2><br>
     <p>
         Employee Name: ${emp1.name}<br>
+        Department: ${emp1.department}<br>
         Employee Salary: ${emp1.salary}
     </p><br>
     <p>
@@ -127,4 +97,4 @@ function renderEmployeeInfo() {
 `
 }
 
-renderEmployeeInfo();
+EmployeeInfo();
