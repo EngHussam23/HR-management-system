@@ -115,7 +115,6 @@ mainBodyElement.style.gap = '10px';
 mainBodyElement.style.maxWidth = '80%';
 mainBodyElement.style.overflow = 'auto';
 
-
 for (let i = 0; i < allEmployees.length; i++) {
     allEmployees[i].renderEmployeesInformation();
 }
