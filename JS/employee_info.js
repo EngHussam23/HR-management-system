@@ -12,36 +12,61 @@ function Employee(id, name, department, level, image, salary) {
 }
 
 Employee.prototype.renderEmployeesInformation = function () {
-    //This method does not work with my design
-    //it displays the content at the bottom of the html document, below the footer
-    // document.write(`<p>
-    //         Employee Name: ${this.name}<br>
-    //         Department: ${this.department}<br>
-    //         Employee Salary: ${this.salary}<br>
-    //     </p>`);
+    // let empInfoArea = document.getElementById('info');
+    // let infoContentArea = document.createElement('p');
+    // let empName = document.createElement('h4');
+    // let empDep = document.createElement('h4');
+    // let empSal = document.createElement('h4');
+    // empName.textContent = `Employee Name: ${this.name}`;
+    // empDep.textContent = `Department: ${this.department}`;
+    // empSal.textContent = `Employee Salary: ${this.salary}`;
+    // infoContentArea.appendChild(empName);
+    // infoContentArea.appendChild(empDep);
+    // infoContentArea.appendChild(empSal);
+    // // for testing
+    // console.log(infoContentArea.textContent);
 
-    //but this one works only with a single object
-    document.getElementById('info').innerHTML = `
-    <p>
-         Employee Name: ${this.name}<br>
-         Department: ${this.department}<br>
-         Employee Salary: ${this.salary}<br>
-     </p>`;
+    // empInfoArea.appendChild(infoContentArea);
+
+    let cardContainer = document.createElement('section');
+    let empPhoto = document.createElement('img');
+    let empName = document.createElement('h4');
+    let empDepartment = document.createElement('h4');
+    let empSalary = document.createElement('h4');
+    let empLevel = document.createElement('h4');
+    // cardContainer.style.padding = '30px';
+    cardContainer.style.backgroundColor = 'rgb(204, 216, 255)';
+    cardContainer.style.borderRadius = '25px';
+    cardContainer.style.width = '220px';
+    cardContainer.style.height = '320px';
+    cardContainer.style.padding = '30px';
+    empPhoto.src = this.image;
+    empPhoto.style.width = '150px';
+    empPhoto.style.height = '150px';
+    empName.textContent = `Employee Name: ${this.name}`;
+    empDepartment.textContent = `Department: ${this.department}`;
+    empLevel.textContent = `Level: ${this.level}`;
+    empSalary.textContent = `Employee Salary: ${this.salary}`;
+    cardContainer.appendChild(empPhoto);
+    cardContainer.appendChild(empName);
+    cardContainer.appendChild(empDepartment);
+    cardContainer.appendChild(empSalary);
+    mainBodyElement.appendChild(cardContainer);
 }
 
-let emp1 = new Employee(getEmployeeID(), 'Ghazi Samer', 'Administration', 'Senior', 'NA');
+let emp1 = new Employee(getEmployeeID(), 'Ghazi Samer', 'Administration', 'Senior', 'assets/Ghazi.png');
 emp1.salary = calculateEmployeeSalary(emp1.level);
-let emp2 = new Employee(getEmployeeID(), 'Lana Ali', 'Finance', 'Senior', 'NA');
+let emp2 = new Employee(getEmployeeID(), 'Lana Ali', 'Finance', 'Senior', 'assets/Lana.png');
 emp2.salary = calculateEmployeeSalary(emp2.level);
-let emp3 = new Employee(getEmployeeID(), 'Tamara Ayoub', 'Marketing', 'Senior', 'NA');
+let emp3 = new Employee(getEmployeeID(), 'Tamara Ayoub', 'Marketing', 'Senior', 'assets/Tamara.png');
 emp3.salary = calculateEmployeeSalary(emp3.level);
-let emp4 = new Employee(getEmployeeID(), 'Safi Walid', 'Administration', 'Mid-Senior', 'NA');
+let emp4 = new Employee(getEmployeeID(), 'Safi Walid', 'Administration', 'Mid-Senior', 'assets/Safi.png');
 emp4.salary = calculateEmployeeSalary(emp4.level);
-let emp5 = new Employee(getEmployeeID(), 'Omar Zaid', 'Development', 'Senior', 'NA');
+let emp5 = new Employee(getEmployeeID(), 'Omar Zaid', 'Development', 'Senior', 'assets/Omar.png');
 emp5.salary = calculateEmployeeSalary(emp5.level);
-let emp6 = new Employee(getEmployeeID(), 'Rana Saleh', 'Development', 'Junior', 'NA');
+let emp6 = new Employee(getEmployeeID(), 'Rana Saleh', 'Development', 'Junior', 'assets/Rana.png');
 emp6.salary = calculateEmployeeSalary(emp6.level);
-let emp7 = new Employee(getEmployeeID(), 'Hadi Ahmad', 'Finance', 'Mid-Senior', 'NA');
+let emp7 = new Employee(getEmployeeID(), 'Hadi Ahmad', 'Finance', 'Mid-Senior', 'assets/Hadi.png');
 emp7.salary = calculateEmployeeSalary(emp7.level);
 
 function getEmployeeID() {
@@ -82,6 +107,14 @@ function calculateEmployeeSalary(employeeLevel) {
 }
 
 console.log(allEmployees);
+
+let mainBodyElement = document.getElementsByClassName('main_body')[0];
+console.log(mainBodyElement);
+mainBodyElement.style.display = 'flex';
+mainBodyElement.style.gap = '10px';
+mainBodyElement.style.maxWidth = '80%';
+mainBodyElement.style.overflow = 'auto';
+
 
 for (let i = 0; i < allEmployees.length; i++) {
     allEmployees[i].renderEmployeesInformation();
