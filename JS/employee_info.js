@@ -111,9 +111,8 @@ console.log(allEmployees);
 let mainBodyElement = document.getElementsByClassName('main_body')[0];
 console.log(mainBodyElement);
 mainBodyElement.style.display = 'flex';
+mainBodyElement.style.flexWrap = 'wrap';
 mainBodyElement.style.gap = '10px';
-mainBodyElement.style.maxWidth = '80%';
-mainBodyElement.style.overflow = 'auto';
 
 for (let i = 0; i < allEmployees.length; i++) {
     allEmployees[i].renderEmployeesInformation();
